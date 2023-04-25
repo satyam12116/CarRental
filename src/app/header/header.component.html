@@ -1,0 +1,26 @@
+<nav class="nav">
+    <h2 routerLink="" (click)="handler()" style="padding-top: 10px;color:blueViolet">Car Rental App</h2>
+  
+    <div [ngSwitch]="menuType">
+      <ul *ngSwitchCase="'default'">
+        <li mat-button><a routerLink="user-auth">User</a></li>
+        <li><a routerLink="admin-auth">admin</a></li>
+      </ul>
+      <ul *ngSwitchCase="'adminDashboard'">
+        <li><a routerLink="cust-list">Customer List</a></li>
+        <li><a routerLink="admin-dashboard">Rent Request</a></li>
+        <li><a (click)="handler()" routerLink="">Log Out </a></li>
+
+      </ul>
+      <ul *ngSwitchCase="'userDashboard'">
+        <li><a routerLink="car-Request">Apply Car Rent</a></li>
+        <li><a routerLink="user-dashboard">Update Profile </a></li>
+        <li><a routerLink="user-rent">Applied Rent </a></li>
+        <li><a (click)="handler()"routerLink="">Log Out </a></li>
+
+      </ul>
+    </div>
+  </nav>
+  <div>
+    <hr>
+  </div>

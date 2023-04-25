@@ -1,0 +1,48 @@
+
+<div
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  "
+>
+  <mat-card *ngIf="closePopup" style="width: 40%">
+    <h1>Request For Car Rent</h1>
+    <form [formGroup]="rentForm" (submit)="applyForCar()"class="example-form" >
+      <div>
+        <mat-form-field width="100%" class="component" appearance="outline">
+          <mat-label>Car Type</mat-label>
+          <input matInput formControlName="carType" />
+          <mat-error>Enter a Valid Car Type</mat-error>
+        </mat-form-field>
+      </div>
+      <div style="margin-top: 10px">
+        <mat-form-field class="component" appearance="outline">
+          <mat-label>Rent For Days</mat-label>
+          <input matInput formControlName="days" />
+          <mat-error>Enter a valid input</mat-error>
+        </mat-form-field>
+      </div>
+        <mat-form-field color="accent" appearance="outline">
+          <mat-label>Rent for Date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker1"
+            formControlName="requestDate"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker1"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker1 color="primary"></mat-datepicker>
+          <mat-error> Enter a valid date</mat-error>
+        </mat-form-field>
+   
+      <div style="text-align: center; margin-top: 15px">
+        <button type="submit" mat-raised-button color="primary" >Apply Now</button>
+      </div>
+    </form>
+  </mat-card>
+</div>
+

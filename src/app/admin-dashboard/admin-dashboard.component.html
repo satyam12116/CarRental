@@ -1,0 +1,32 @@
+<h2>Car Rent Request</h2>
+<div class="container">
+  <div *ngFor="let customer of carRequests">
+    <div>
+      <mat-card>
+        <div style="text-align: right">
+          <!-- <mat-icon (click)="approve(customer)" >done</mat-icon> -->
+           <button style="margin-right: 10px;background:rgb(71, 92, 71) "
+    mat-raised-button
+    color="primary"
+   (click)="approve(customer)"    
+  >
+Accept 
+  </button>
+  <button style=" background:rgb(111, 71, 71)"
+  mat-raised-button
+  color="primary"
+ (click)="reject(customer)"    
+>
+Reject
+</button>
+        </div>
+        <div>Customer Id : {{ customer.customerId }}</div>
+        <div>Car Type : {{ customer.carType }}</div>
+        <div>Days : {{ customer.days }}</div>
+        <div>Status : {{ customer.status }}</div>
+        <div>Date : {{ customer.requestDate }}</div>
+
+      </mat-card>
+    </div>
+  </div>
+</div>
